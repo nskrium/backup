@@ -1,9 +1,5 @@
-computeSourcePath=true
-contextsDir=C\:\\Users\\internousdev.00174045469680.000\\Downloads\\pleiades\\tomcat\\8\\conf\\Catalina\\localhost
+contextsDir=C:/pleiades/tomcat/8/conf/Catalina/localhost
 eclipse.preferences.version=1
-managerUrl=http\://localhost\:8080/manager
-projectsInSourcePath=HelloJSP;TestDB;TestDB2;TestProject01;WebProj;WebProj2;login;
-tomcatConfigFile=C\:\\Users\\internousdev.00174045469680.000\\Downloads\\pleiades\\tomcat\\8\\conf\\server.xml
-tomcatDir=C\:\\Users\\internousdev.00174045469680.000\\Downloads\\pleiades\\tomcat\\8
-tomcatJRE=1512111612316
+tomcatConfigFile=C:/pleiades/tomcat/8/conf/server.xml
+tomcatDir=C:/pleiades/tomcat/8
 tomcatVersion=tomcatV8

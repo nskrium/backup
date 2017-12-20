@@ -1,0 +1,5 @@
+package com.internousdev.site.util;
+
+public class DBConnector {
+
+}

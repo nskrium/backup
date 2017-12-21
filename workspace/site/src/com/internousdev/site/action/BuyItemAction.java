@@ -1,7 +1,9 @@
 package com.internousdev.site.action;
 
 import java.util.Map;
+
 import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware {
@@ -36,6 +38,15 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		this.count= count;
 	}
 
-	public String
+	public String getPay() {
+		return pay;
+	}
+	public void setPay(String pay) {
+		this.pay= pay;
+	}
+
+	public void setSession (Map<String, Object> session) {
+		this.session= session;
+	}
 
 }

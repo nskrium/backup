@@ -1,0 +1,18 @@
+package com.internousdev.site.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.site.dto.MyPageDTO;
+import com.internousdev.site.util.DBConnector;
+
+public class MyPageDAO {
+	private DBConnector db= new DBConnector();
+	private Connection con= db.getConnection();
+	
+	public ArrayList<MyPageDTO> getMyPageUserInfo (String item_transaction_id, String user_master_id)
+
+}

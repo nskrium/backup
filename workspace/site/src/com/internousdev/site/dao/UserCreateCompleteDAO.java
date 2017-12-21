@@ -12,7 +12,7 @@ public class UserCreateCompleteDAO {
 	private Connection con= db.getConnection();
 	private DateUtil dateUtil= new DateUtil();
 
-	private String sql= "insert into login_user_transaction (login_id, login_pass, user_name. insert_date) values(?,?,?,?)";
+	private String sql= "insert into login_user_transaction (login_id, login_pass, user_name, insert_date) values(?,?,?,?)";
 
 	public void cerateUser (String loginUserId, String loginUserPassword, String userName)  throws SQLException {
 		try {
@@ -22,7 +22,7 @@ public class UserCreateCompleteDAO {
 			ps.setString(3, userName);
 			ps.setString(4, dateUtil.getDate());
 
-			ps.executeQuery();
+			ps.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

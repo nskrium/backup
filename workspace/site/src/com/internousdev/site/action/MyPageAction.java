@@ -1,53 +1,77 @@
 package com.internousdev.site.action;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.site.dao.UserCreateCompleteDAO;
+import com.internousdev.site.dao.MyPageDAO;
+import com.internousdev.site.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware {
-	private String loginUserId;
-	private String loginPassword;
-	private String userName;
-
 	public Map<String, Object> session;
-	private String result;
-	private UserCreateCompleteDAO userCreateCompleteDAO= new UserCreateCompleteDAO();
+	private MyPageDAO myPageDAO= new MyPageDAO();
+	public ArrayList<MyPageDTO> myPageList= new ArrayList<MyPageDTO>();
+	private String deleteFlg;
+	private String message;
 
 	public String execute() throws SQLException {
-		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
-				session.get("loginPassword").toString(),
-				session.get("userName").toString());
-		result= SUCCESS;
+		if (!session.containsKey("id")) {
+			return ERROR;
+		}
+
+		if (deleteFlg == null) {
+			String item_transaction_id= session.get("id").toString();
+			String user_master_id= session.get("login_user_id").toString();
+
+			myPageList= myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			Iterator<MyPageDTO> iterator= myPageList.iterator();
+
+			if (!(iterator.hasNext())) {
+				myPageList= null;
+			}
+		} else if (deleteFlg.equals("1")){
+			delete();
+		}
+
+		String result= SUCCESS;
 		return result;
 	}
 
-	public  String getLoginUserId() {
-		return loginUserId;
-	}
-	public void setLoginUserId (String loginUserID) {
-		this.loginUserId= loginUserID;
+
+	public void delete() throws SQLException{
+		String item_transaction_id= session.get("id").toString();
+		String user_master_id= session.get("login_user_id").toString();
+		int res= myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
+
+		if ( res>0 ) {
+			myPageList= null;
+			setMessage ("商品情報を正しく削除しました。");
+		} else if (res==0) {
+			setMessage ("商品情報の削除に失敗しました。");
+		}
 	}
 
-	public String getLoginPassword() {
-		return loginPassword;
-	}
-	public void setLoginPassword (String loginPassword) {
-		this.loginPassword= loginPassword;
-	}
 
-	public String getUserName() {
-		return userName;
+	public String getDeleteFlg() {
+		return deleteFlg;
 	}
-	public void setUserName (String userName) {
-		this.userName= userName;
+	public void setDeleteFlg (String deleteFlg) {
+		this.deleteFlg= deleteFlg;
 	}
 
 	public void setSession (Map<String, Object> session) {
 		this.session= session;
 	}
 
-}
+	public String getMassage() {
+		return message;
+	}
+	public void setMessage (String message) {
+		this.message= message;
+	}
+
+	}

@@ -1,0 +1,5 @@
+package com.internousdev.NotebookSite.dto;
+
+public class BuyItemDTPO {
+
+}

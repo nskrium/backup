@@ -27,6 +27,13 @@
 
 <body>
 	<p>MyPage</p>
+
+
+		<s:form action= "MyPageAction">
+			<input type= "hidden" name= "deleteFlg" value= "1">
+			<s:submit value = "削除" method= "delete" />
+		</s:form>
+
 	<s:if test= "myPageList == null">
 		<h3>ご購入情報はありません。</h3>
 	</s:if>
@@ -53,12 +60,9 @@
 		</s:iterator>
 		</table>
 
-		<s:form action= "MyPageAction">
-			<input type= "hidden" name= "deleteFlg" value= "1">
-			<s:submit value = "削除" method= "delete" />
-		</s:form>
+		</s:elseif>
 
-	</s:elseif>
+
 
 	<s:if test= "message != null">
 		<h3><s:property value= "message" /></h3>

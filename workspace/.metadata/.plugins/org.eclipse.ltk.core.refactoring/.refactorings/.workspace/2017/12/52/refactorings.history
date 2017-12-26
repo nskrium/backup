@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="リソース &apos;NoteBook専用site&apos; を削除" deleteContents="true" description="リソース &apos;NoteBook専用site&apos; を削除" element1="/NoteBook専用site" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1514260874291"/>&#x0A;<refactoring comment="リソース名 &apos;NoteBook専用site&apos; を &apos;NoteBookSite&apos; に変更します" description="リソース &apos;NoteBook専用site&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/NoteBook専用site" name="NoteBookSite" stamp="1514265157272" updateReferences="true"/>
+</session>

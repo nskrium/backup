@@ -15,13 +15,6 @@
 	<meta charset="UTF-8">
 	<title>UserCreate画面</title>
 
-		<style type="text/css">
-
-	body {
-		background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
-		color: white;
-	}
-	</style>
 
 </head>
 

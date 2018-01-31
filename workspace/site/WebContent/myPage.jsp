@@ -15,14 +15,6 @@
 	<meta charset="UTF-8">
 	<title>MyPage</title>
 
-		<style type="text/css">
-
-	body {
-		background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
-		color: white;
-	}
-	</style>
-
 </head>
 
 <body>

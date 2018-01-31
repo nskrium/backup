@@ -16,15 +16,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<title>BuyItemConfirm</title>
 
-		<style type="text/css">
-
-	body {
-		background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
-		color: white;
-	}
-	</style>
-
-
 	<script type="text/javascript">
 		function submitAction(url) {
 			$('form').attr('action', url);
